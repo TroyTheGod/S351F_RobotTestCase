@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create class</title>
+  <link href="demo.css" media="all" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+    function checkForm(formObj) {
+        if (formObj.title_field.value.length > 0 
+          && formObj.description_field.value.length > 0
+          && formObj.difficulty_field.value > 0
+          && formObj.language_field.value > 0) {
+            window.location = "classCreated.html";
+        } else {
+            window.location = "classCreationError.html";
+        }
+    }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <h1>Create Class</h1>
+      <form name="create_form" onsubmit="checkForm(this); return false;">
+        <table>
+          <tr>
+            <td><label for="title_field">Title:</label></td>
+            <td><input id="title_field" size="30" type="text"></td>
+          </tr>
+          <tr>
+            <td><label for="description_field">Description:</label></td>
+            <td><textarea id="description_field" size="30"></textarea></td>
+          </tr>
+          <tr>
+            <td><label for="difficulty_field">Difficulty:</label></td>
+            <td>
+              <select id="difficulty_field">
+                <option value=0>Please select</option>
+                <option value=1>Beginner</option>
+                <option value=2>Intermediate</option>
+                <option value=3>Advanced</option>
+              </select>
+             </td>
+          </tr>
+          <tr>
+            <td><label for="language_field">Language:</label></td>
+            <td>
+              <select id="language_field">
+                <option value=0>Please select</option>
+                <option value=1>Cantonese</option>
+                <option value=2>English</option>
+                <option value=3>Mandarin</option>
+              </select>
+             </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td><input id="submit_button" type="submit" value="SUBMIT"></td>
+          </tr>
+        </table>
+      </form>
+  </div>
+</body>
+</html>
